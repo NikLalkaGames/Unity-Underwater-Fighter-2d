@@ -12,6 +12,29 @@ public class Actor : MonoBehaviour {
     public float maxLife = 100.0f;
     public float currentLife = 100.0f;
     protected Vector3 frontVector;
+
+
+
+
+
+
+
+
+
+    public AttackData normalAttack;
+
+
+
+
+
+
+
+
+
+
+
+
+
     protected virtual void Start()
     {
         currentLife = maxLife;
@@ -36,5 +59,20 @@ public class Actor : MonoBehaviour {
             frontVector = new Vector3(1, 0, 0);
             transform.localScale = new Vector3(1, 1, 1);
         }
+    }
+
+
+
+    public virtual void Attack()
+    {
+        baseAnim.SetTrigger("Attack");
+    }
+
+    [System.Serializable]
+    public class AttackData
+    {
+        public float attackDamage = 10;
+        public float force = 50;
+        public bool knockdown = false;
     }
 }
