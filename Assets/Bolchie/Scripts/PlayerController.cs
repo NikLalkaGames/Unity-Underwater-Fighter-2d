@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // transform and physics variables //
+    
     [SerializeField] private Vector2 speed =  new Vector2(5f, 3f);
 
     private Vector2 movement = new Vector3();
