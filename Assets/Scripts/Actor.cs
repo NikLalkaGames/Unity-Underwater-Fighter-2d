@@ -39,8 +39,12 @@ public class Actor : MonoBehaviour {
 
     public virtual void Attack()
     {
-        baseAnim.SetTrigger("Attack");
+        baseAnim.SetBool("Attack", true);
     }
+
+
+
+
 
     [System.Serializable]
     public class AttackData

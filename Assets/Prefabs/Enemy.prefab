@@ -277,7 +277,7 @@ MonoBehaviour:
     attackDamage: 10
     force: 50
     knockdown: 0
-  timeToTurn: 1.5
+  timeToTurn: 1
   playerDetector: {fileID: 7330347533592556189}
 --- !u!1 &6776186098073286594
 GameObject:

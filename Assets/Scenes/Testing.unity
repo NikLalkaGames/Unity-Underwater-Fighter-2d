@@ -331,10 +331,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bolchie - Basic 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1719432917000318, guid: d58e58070863f4a4e9a88c181489ff86, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4921285705009362, guid: d58e58070863f4a4e9a88c181489ff86, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.11

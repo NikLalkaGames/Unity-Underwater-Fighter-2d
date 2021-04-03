@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Enemy : Actor
 {
+
     FiniteStateMachine fsm;
 
-    public float timeToTurn = 1.5f;
+    public float timeToTurn;
     
     private float turnTimer;
     
@@ -15,47 +16,61 @@ public class Enemy : Actor
     Vector3 direction = Vector3.right;
 
     public PlayerDetector playerDetector;
+    
 
     protected override void Start()
     {
         base.Start();
         fsm = new FiniteStateMachine();
         fsm.SetUpState(Idle);
-        Debug.Log("IdleState");
     }
+
 
     public void Idle()
     {
-        // transition condition
-        if (playerDetector.playerIsNearby)
+        baseAnim.SetFloat("Speed", 0f);
+        baseAnim.SetBool("Attack", false);
+
+
+
+        if (turnTimer > 0)
         {
-            fsm.TransitTo(Follow);
-            Debug.Log("FollowState");
+            turnTimer -= Time.fixedDeltaTime;
+        }
+        else
+        {
+            turnTimer = timeToTurn;
+            if ((playerDetector.playerIsNearby) && (Vector3.Distance(transform.position, PlayerController.instance.transform.position) > 1.5f))
+            {
+                fsm.TransitTo(Follow);
+            }
+            if ((playerDetector.playerIsNearby) && (Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= 1.5f))
+            {
+                fsm.TransitTo(Attacking);
+            }
         }
     }
+
 
     public void Follow()
     {
         moveVector = direction * speed;
         body.MovePosition(transform.position + moveVector * Time.fixedDeltaTime);
         baseAnim.SetFloat("Speed", moveVector.magnitude);
-        
-        if ( Vector2.Distance(transform.position, PlayerController.instance.transform.position) <= 2 )
+
+        if ( Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= 1.5f )
         {
-            Attack();
-            fsm.TransitTo(Attacking);
-            Debug.Log("AttackState");
+            fsm.TransitTo(Idle);
         }
     }
 
+
     public void Attacking()
     {
-        // attack logic
-        if (Vector2.Distance(transform.position, PlayerController.instance.transform.position) > 2)
-        {
-            fsm.TransitTo(Follow);
-            Debug.Log("FollowState");
-        }
+        Debug.Log("Attacking");
+        baseAnim.SetBool("Attack", true);
+        fsm.TransitTo(Idle);
+        
     }
 
     private void Update()
