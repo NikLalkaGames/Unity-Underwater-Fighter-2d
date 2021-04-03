@@ -66,7 +66,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Attack
+    path: AttackCollider
   m_ScaleCurves: []
   m_FloatCurves:
   - curve:
@@ -112,7 +112,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Attack
+    path: AttackCollider
     classID: 65
     script: {fileID: 0}
   m_PPtrCurves:
@@ -151,14 +151,14 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1080829965
+      path: 1943655107
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1080829965
+      path: 1943655107
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 65
@@ -247,7 +247,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: Attack
+    path: AttackCollider
     classID: 65
     script: {fileID: 0}
   - curve:
@@ -302,7 +302,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Attack
+    path: AttackCollider
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -357,7 +357,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Attack
+    path: AttackCollider
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -412,7 +412,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Attack
+    path: AttackCollider
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []

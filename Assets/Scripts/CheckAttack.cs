@@ -11,13 +11,9 @@ public class CheckAttack : MonoBehaviour
     
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.CompareTag("Actor"))
+        if (other.CompareTag("Enemy"))
         {
             Debug.Log("Has hit enemy!");
         }
-    }
-
-    private void OnCollisionEnter(Collision other) {
-        Debug.Log("Check default collisison");
     }
 }

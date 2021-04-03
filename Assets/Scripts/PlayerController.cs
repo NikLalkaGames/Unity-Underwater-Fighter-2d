@@ -5,23 +5,27 @@ using UnityEngine;
 
 public class PlayerController : Actor
 {
+    public static PlayerController instance;
     Vector3 curDirection;
-    bool isFacingLeft;
 
     //variables for attacking
     bool isAttackingAnim;
     float lastAttackTime;
     float attackLimit = 0.14f;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     protected override void Start()
     {
         base.Start();
     }
 
-    public override void Update()
+    public void Update()
     {
         //calls superclass
-        base.Update();
 
         //handles button presses after death
         if (!isAlive)
@@ -54,7 +58,7 @@ public class PlayerController : Actor
         // movement logic
         if (!isAttackingAnim)
         {
-            Vector3 moveVector = curDirection * speed;
+            moveVector = curDirection * speed;
             body.MovePosition(transform.position + moveVector * Time.fixedDeltaTime);
             baseAnim.SetFloat("Speed", moveVector.magnitude);
 
@@ -63,7 +67,6 @@ public class PlayerController : Actor
                 isFacingLeft = moveVector.x < 0;
             FlipSprite(isFacingLeft);
         }
-        
     }
 
 }

@@ -13,17 +13,14 @@ public class Actor : MonoBehaviour {
     public float currentLife = 100.0f;
     protected Vector3 frontVector;
     public AttackData normalAttack;
+    protected bool isFacingLeft;
+    protected Vector3 moveVector;
 
     protected virtual void Start()
     {
         currentLife = maxLife;
         isAlive = true;
         baseAnim.SetBool("IsAlive", isAlive);
-    }
-
-    public virtual void Update()
-    {
-
     }
 
     public void FlipSprite(bool isFacingLeft)
