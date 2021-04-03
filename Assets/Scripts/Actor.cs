@@ -12,28 +12,7 @@ public class Actor : MonoBehaviour {
     public float maxLife = 100.0f;
     public float currentLife = 100.0f;
     protected Vector3 frontVector;
-
-
-
-
-
-
-
-
-
     public AttackData normalAttack;
-
-
-
-
-
-
-
-
-
-
-
-
 
     protected virtual void Start()
     {
@@ -60,8 +39,6 @@ public class Actor : MonoBehaviour {
             transform.localScale = new Vector3(1, 1, 1);
         }
     }
-
-
 
     public virtual void Attack()
     {
