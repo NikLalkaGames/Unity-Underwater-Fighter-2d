@@ -9,8 +9,6 @@ public class Actor : MonoBehaviour {
     protected bool canFlinch = true;
     public float speed = 2;
     public bool isAlive = true;
-    public float maxLife = 100.0f;
-    public float currentLife = 100.0f;
     protected Vector3 frontVector;
     public AttackData normalAttack;
     protected bool isFacingLeft;
@@ -18,7 +16,6 @@ public class Actor : MonoBehaviour {
 
     protected virtual void Start()
     {
-        currentLife = maxLife;
         isAlive = true;
         baseAnim.SetBool("IsAlive", isAlive);
     }
@@ -41,9 +38,6 @@ public class Actor : MonoBehaviour {
     {
         baseAnim.SetBool("Attack", true);
     }
-
-
-
 
 
     [System.Serializable]
