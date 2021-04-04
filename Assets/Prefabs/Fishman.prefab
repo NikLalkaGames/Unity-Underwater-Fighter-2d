@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 489127303369669389}
   - component: {fileID: 489127303369669388}
   - component: {fileID: 489127303173792645}
+  - component: {fileID: 2125567280367968850}
   m_Layer: 8
   m_Name: Fishman
   m_TagString: Player
@@ -87,6 +88,19 @@ MonoBehaviour:
   health: 0
   timeInvincible: 1
   invincibleTimer: 0
+--- !u!65 &2125567280367968850
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490788319640339274}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3213334, y: 3.950264, z: 1.1462204}
+  m_Center: {x: 0.06937289, y: 0.3074646, z: 0.11787523}
 --- !u!1 &3208052887463368116
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,10 +110,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5342193875501104203}
-  - component: {fileID: 4575332988538457302}
   m_Layer: 8
   m_Name: Colliders
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,19 +131,6 @@ Transform:
   m_Father: {fileID: 493356721127844838}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4575332988538457302
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3208052887463368116}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.3213334, y: 3.950264, z: 1.1462204}
-  m_Center: {x: 0.06937289, y: 0.3074646, z: 0.11787523}
 --- !u!1 &7712880553993098313
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 4512268557721298231}
   - component: {fileID: 4144430790592507031}
   - component: {fileID: 489127301803237027}
+  - component: {fileID: 204077751}
   m_Layer: 8
   m_Name: AttackCollider
   m_TagString: Untagged
@@ -186,6 +187,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f449f0978bf66aa4d967b32388980788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &204077751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7712880553993098313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84de5abeb224b44d993a75f58c16402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8073495335495086724

@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class EnemyAttack : MonoBehaviour
 {
-    private EnemyHealth attack;
     // Start is called before the first frame update
+
+
+    private PlayerHealth attack;
     void Start()
     {
         
@@ -20,9 +22,9 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Player")
         {
-            attack = other.GetComponent<EnemyHealth>();
+            attack = other.GetComponent<PlayerHealth>();
             Debug.Log(attack);
             if (attack != null)
             {
@@ -30,4 +32,7 @@ public class PlayerAttack : MonoBehaviour
             }
         }    
     }
+
+
+
 }

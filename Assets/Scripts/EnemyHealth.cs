@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     public float maxHealth;
     public float health;
@@ -17,7 +16,6 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-        healthBar = HealthBarController.healthBarStaticController;
     }
 
     // Update is called once per frame
@@ -29,7 +27,6 @@ public class PlayerHealth : MonoBehaviour
             health += damageAmount;
             if (health > 0)
             {
-                healthBar.SetValue(health / maxHealth);
                 invincibleTimer = timeInvincible;
                 Debug.Log("Health has been reduced: " + health / maxHealth);
             }
@@ -74,9 +71,6 @@ public class PlayerHealth : MonoBehaviour
             UpdateHealth(+30);
         }
         if (health <= 0)
-        {
             Destroy(this.gameObject);
-            SceneManager.LoadScene("MainMenu");
-        }
     }
 }
