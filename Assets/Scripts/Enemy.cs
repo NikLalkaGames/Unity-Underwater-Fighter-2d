@@ -40,11 +40,11 @@ public class Enemy : Actor
         else
         {
             turnTimer = timeToTurn;
-            if ((playerDetector.playerIsNearby) && (Vector3.Distance(transform.position, PlayerController.instance.transform.position) > 1.5f))
+            if ((playerDetector.playerIsNearby) && (Vector3.Distance(transform.position, PlayerController.instance.transform.position) > 2.5f))
             {
                 fsm.TransitTo(Follow);
             }
-            if ((playerDetector.playerIsNearby) && (Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= 1.5f))
+            if ((playerDetector.playerIsNearby) && (Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= 2.5f))
             {
                 fsm.TransitTo(Attacking);
             }
@@ -58,7 +58,7 @@ public class Enemy : Actor
         body.MovePosition(transform.position + moveVector * Time.fixedDeltaTime);
         baseAnim.SetFloat("Speed", moveVector.magnitude);
 
-        if ( Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= 1.5f )
+        if ( Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= 2.5f )
         {
             fsm.TransitTo(Idle);
         }
