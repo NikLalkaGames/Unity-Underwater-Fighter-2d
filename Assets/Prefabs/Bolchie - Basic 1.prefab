@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4921285705009362}
   - component: {fileID: 794974265}
   - component: {fileID: 794974264}
+  - component: {fileID: 599195825}
   m_Layer: 8
   m_Name: Bolchie - Basic 1
   m_TagString: Player
@@ -66,12 +67,26 @@ MonoBehaviour:
   body: {fileID: 794974265}
   speed: 2
   isAlive: 1
-  maxLife: 100
-  currentLife: 100
   normalAttack:
     attackDamage: 10
     force: 50
     knockdown: 0
+--- !u!114 &599195825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719432917000318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e206c5dd5fdf4ff4c87af1d684fb98fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 0
+  timeInvincible: 1
+  invincibleTimer: 0
 --- !u!1 &3048076761775666816
 GameObject:
   m_ObjectHideFlags: 0

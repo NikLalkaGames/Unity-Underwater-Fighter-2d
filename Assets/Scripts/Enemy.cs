@@ -16,6 +16,8 @@ public class Enemy : Actor
     Vector3 direction = Vector3.right;
 
     public PlayerDetector playerDetector;
+
+    private bool hitTarget;
     
 
     protected override void Start()
@@ -23,6 +25,7 @@ public class Enemy : Actor
         base.Start();
         fsm = new FiniteStateMachine();
         fsm.SetUpState(Idle);
+
     }
 
 
@@ -40,11 +43,11 @@ public class Enemy : Actor
         else
         {
             turnTimer = timeToTurn;
-            if ((playerDetector.playerIsNearby) && (Vector3.Distance(transform.position, PlayerController.instance.transform.position) > 1.5f))
+            if ((playerDetector.playerIsNearby) && (Vector3.Distance(transform.position, PlayerController.instance.transform.position) > 3.5f))
             {
                 fsm.TransitTo(Follow);
             }
-            if ((playerDetector.playerIsNearby) && (Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= 1.5f))
+            if ((playerDetector.playerIsNearby) && (Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= 3.5f))
             {
                 fsm.TransitTo(Attacking);
             }
@@ -58,7 +61,7 @@ public class Enemy : Actor
         body.MovePosition(transform.position + moveVector * Time.fixedDeltaTime);
         baseAnim.SetFloat("Speed", moveVector.magnitude);
 
-        if ( Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= 1.5f )
+        if ( Vector3.Distance(transform.position, PlayerController.instance.transform.position) <= 3.5f )
         {
             fsm.TransitTo(Idle);
         }
@@ -80,10 +83,19 @@ public class Enemy : Actor
         if (direction.x != 0)
             isFacingLeft = direction.x < 0;
         FlipSprite(isFacingLeft);
+
+
+
+        
     }
     
     public void FixedUpdate()
     {
         fsm.UpdateState();
     }
+
+
+
+
+
 }

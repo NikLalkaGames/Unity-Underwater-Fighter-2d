@@ -42,4 +42,10 @@ public class PauseMenuScript : MonoBehaviour
         Application.Quit ();
         Debug.Log("Quit");
     }
+
+    public void Restart(){
+        Debug.Log("Reloading scene");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Testing");
+    }
 }
