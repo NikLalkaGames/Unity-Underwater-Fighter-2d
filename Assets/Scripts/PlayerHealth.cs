@@ -72,5 +72,7 @@ public class PlayerHealth : MonoBehaviour
         {
             UpdateHealth(+30);
         }
+        if (health <= 0)
+            Destroy(this.gameObject);
     }
 }
